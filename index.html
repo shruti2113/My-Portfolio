@@ -356,6 +356,40 @@
   .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
 
+  @media (max-width: 600px) {
+    .hero-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .hero-actions .btn-primary,
+    .hero-actions .btn-outline,
+    .hero-actions .btn-resume {
+      text-align: center;
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+    .project-card.featured {
+      grid-column: auto;
+      display: block;
+    }
+    .project-visual {
+      height: auto;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+    }
+    .project-card.featured .project-visual {
+      height: auto;
+      aspect-ratio: 16 / 9;
+    }
+    .project-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
   /* NEW MOBILE MENU TOGGLE */
   .menu-toggle {
     display: none;
@@ -409,6 +443,7 @@
       width: 90%;
       margin: 0 auto;
     }
+
   }
 </style>
 <script id="portfolio-imgs">
@@ -693,26 +728,24 @@ window._PORTFOLIO_IMGS = {
     </div>
 
     <!-- Mobile App -->
-    <div class="project-card fade-in" style="grid-column:1/-1;">
-      <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:0;overflow:hidden;border-radius:1.5rem;">
-        <div class="project-visual" style="background:#111;padding:0;overflow:hidden;height:340px;">
-          <img id="img-apps" style="width:100%;height:100%;object-fit:cover;display:none;" alt="Mobile app designs">
-          <label class="img-upload-zone" id="zone-apps" onclick="document.getElementById('file-apps').click()">
-            <input type="file" id="file-apps" accept="image/*" onchange="loadImg(this,'img-apps','zone-apps')">
-            <div class="img-upload-icon">📱</div>
-            <div class="img-upload-label"><strong>Mobile App UI Concepts</strong>Click to upload project image</div>
-          </label>
-        </div>
-        <div class="project-info" style="padding:2rem;">
-          <div class="project-type">Mobile App Design · UI/UX</div>
-          <div class="project-title">Mobile Application UI Concepts</div>
-          <p class="project-desc">Practice projects for mobile application design — exploring clean dialer, phone cleaner, speed test, and utility app UIs. Focused on intuitive navigation, modern color systems, and data-heavy layout patterns.</p>
-          <div class="project-tags">
-            <span class="project-tag">Mobile UI</span>
-            <span class="project-tag">UX Design</span>
-            <span class="project-tag">Utility Apps</span>
-            <span class="project-tag">Prototyping</span>
-          </div>
+    <div class="project-card fade-in">
+      <div class="project-visual" style="background:#111;padding:0;overflow:hidden;">
+        <img id="img-apps" style="width:100%;height:100%;object-fit:cover;display:none;" alt="Mobile app designs">
+        <label class="img-upload-zone" id="zone-apps" onclick="document.getElementById('file-apps').click()">
+          <input type="file" id="file-apps" accept="image/*" onchange="loadImg(this,'img-apps','zone-apps')">
+          <div class="img-upload-icon">📱</div>
+          <div class="img-upload-label"><strong>Mobile App UI Concepts</strong>Click to upload project image</div>
+        </label>
+      </div>
+      <div class="project-info">
+        <div class="project-type">Mobile App Design · UI/UX</div>
+        <div class="project-title">Mobile Application UI Concepts</div>
+        <p class="project-desc">Practice projects for mobile application design — exploring clean dialer, phone cleaner, speed test, and utility app UIs. Focused on intuitive navigation, modern color systems, and data-heavy layout patterns.</p>
+        <div class="project-tags">
+          <span class="project-tag">Mobile UI</span>
+          <span class="project-tag">UX Design</span>
+          <span class="project-tag">Utility Apps</span>
+          <span class="project-tag">Prototyping</span>
         </div>
       </div>
     </div>
